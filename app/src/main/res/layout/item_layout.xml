@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="data"
+            type="androidx.lifecycle.MutableLiveData&lt;com.meet.xingyu.model.TestBean&gt;" />
+        <variable
+            name="presenter"
+            type="com.meet.xingyu.presenter.TestPresenter" />
+    </data>
+
+    <LinearLayout
+        android:paddingHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        clickItemBean="@{data}"
+        clickItemPresenter="@{presenter}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:text="@{data.userId}"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:gravity="center"
+            android:text="@{data.userName}"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+</layout>

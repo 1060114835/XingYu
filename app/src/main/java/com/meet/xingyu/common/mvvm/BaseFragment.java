@@ -23,10 +23,12 @@ public abstract class BaseFragment extends Fragment {
         ViewDataBinding dataBinding = configureDataBinding();
         dataBinding.setLifecycleOwner(this);
         configurePresenter().init();
+        configureViewModel().loadData();
         bindingVariable();
         return dataBinding.getRoot();
     }
 
+    protected abstract BaseViewModel configureViewModel();
 
     protected abstract ViewDataBinding configureDataBinding();
 

@@ -5,7 +5,7 @@ import android.view.View;
 /**
  * 点击事件防抖
  */
-public abstract class NoDoubleClickListener implements View.OnClickListener {
+public abstract class NoDoubleOnClickListener implements View.OnClickListener {
     //点击最短时间间隔
     private static final int MIN_CLICK_TIME = 200;
     //上次点击时间

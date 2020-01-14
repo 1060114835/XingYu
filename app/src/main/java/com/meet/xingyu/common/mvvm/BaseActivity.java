@@ -2,10 +2,12 @@ package com.meet.xingyu.common.mvvm;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.ViewDataBinding;
+
 
 @SuppressLint("Registered")
 public abstract class BaseActivity extends AppCompatActivity {
@@ -18,11 +20,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     private void dealDataBing() {
-        setContentView(configureDataBinding().getRoot());
-        configureDataBinding().setLifecycleOwner(this);
+        ViewDataBinding dataBinding = configureDataBinding();
+        dataBinding.setLifecycleOwner(this);
+        configureViewModel().loadData();
         configurePresenter().init();
         bindingVariable();
+        setContentView(dataBinding.getRoot());
     }
+
+    protected abstract BaseViewModel configureViewModel();
 
     protected abstract BasePresenter configurePresenter();
 

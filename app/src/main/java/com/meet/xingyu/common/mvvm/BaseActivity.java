@@ -2,7 +2,6 @@ package com.meet.xingyu.common.mvvm;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,11 +27,28 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(dataBinding.getRoot());
     }
 
+    /**
+     * 返回页面的viewModel
+     * @return
+     */
     protected abstract BaseViewModel configureViewModel();
 
+    /**
+     * 返回页面的presenter
+     * @return
+     */
     protected abstract BasePresenter configurePresenter();
 
+    /**
+     * 绑定xml中指定的vm和presenter
+     */
+
     protected abstract void bindingVariable();
+
+    /**
+     * 返回页面的binding
+     * @return
+     */
 
     protected abstract ViewDataBinding configureDataBinding();
 

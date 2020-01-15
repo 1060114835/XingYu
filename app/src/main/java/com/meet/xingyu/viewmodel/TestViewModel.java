@@ -5,7 +5,6 @@ import android.content.Context;
 import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.meet.xingyu.BR;
 import com.meet.xingyu.R;
 import com.meet.xingyu.common.adapter.BaseAdapter;
 import com.meet.xingyu.common.adapter.SingleTypeAdapter;
@@ -60,7 +59,7 @@ public class TestViewModel extends AdapterViewModel {
     public BaseAdapter getAdapter(Context context) {
         if (singleTypeAdapter == null) {
             singleTypeAdapter =  new SingleTypeAdapter<>(context,com.meet.xingyu.BR.data
-                    , R.layout.item_layout, com.meet.xingyu.BR.presenter);
+                    , R.layout.item_test, com.meet.xingyu.BR.presenter);
             singleTypeAdapter.set(mList);
             singleTypeAdapter.setmListener(TestPresenter.getInstance());
         }

@@ -5,13 +5,13 @@ import androidx.databinding.ViewDataBinding;
 import com.meet.xingyu.common.mvvm.BaseActivity;
 import com.meet.xingyu.common.mvvm.BasePresenter;
 import com.meet.xingyu.common.mvvm.BaseViewModel;
-import com.meet.xingyu.databinding.LoginActivityBinding;
+import com.meet.xingyu.databinding.ActivityTestBinding;
 import com.meet.xingyu.presenter.TestPresenter;
 import com.meet.xingyu.viewmodel.TestViewModel;
 
 public class TestActivity extends BaseActivity {
 
-    private LoginActivityBinding binding;
+    private ActivityTestBinding binding;
 
     @Override
     protected BaseViewModel configureViewModel() {
@@ -31,7 +31,7 @@ public class TestActivity extends BaseActivity {
 
     @Override
     protected ViewDataBinding configureDataBinding() {
-        binding = LoginActivityBinding.inflate(getLayoutInflater());
+        binding = ActivityTestBinding.inflate(getLayoutInflater());
         return binding;
     }
 }

@@ -10,7 +10,7 @@ import com.meet.xingyu.common.adapter.BaseAdapter;
 
 /**
  * 布局中如果用到recyclerView就继承这个viewModel
- * @param <T>
+ * @param <T> 子项的Bean
  */
 public abstract class AdapterViewModel<T extends MutableLiveData> extends BaseViewModel {
 

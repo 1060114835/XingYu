@@ -1,9 +1,11 @@
 package com.meet.xingyu.presenter;
 
+import android.app.Activity;
 import android.view.View;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.meet.xingyu.R;
 import com.meet.xingyu.common.mvvm.ItemPresenter;
 import com.meet.xingyu.common.utils.ToastUtil;
 import com.meet.xingyu.model.TestBean;
@@ -30,7 +32,14 @@ public class TestPresenter extends ItemPresenter<MutableLiveData<TestBean>> {
 
     @Override
     public void onClick(View v) {
-        ToastUtil.getInstance().toast("弹一条消息");
+        switch (v.getId()) {
+            case R.id.left_icon:
+                ((Activity)v.getContext()).finish();
+                break;
+            case R.id.bt_1:
+                ToastUtil.getInstance().toast("弹一条消息");
+                break;
+        }
     }
 
 

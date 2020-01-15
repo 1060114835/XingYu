@@ -8,13 +8,11 @@ import android.view.View;
  */
 public abstract class BasePresenter {
 
+
     /**
-     * 如果需要在页面加载的时候做一些初始化操作，则覆写这个方法
+     * 用来处理的页面的点击事件
+     * @param v
      */
-    void init(){
-    }
-
-
     public abstract void onClick(View v);
 
 

@@ -2,6 +2,7 @@ package com.meet.xingyu.common.mvvm;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,9 +23,16 @@ public abstract class BaseActivity extends AppCompatActivity {
         ViewDataBinding dataBinding = configureDataBinding();
         dataBinding.setLifecycleOwner(this);
         configureViewModel().loadData();
-        configurePresenter().init();
         bindingVariable();
+        init();
         setContentView(dataBinding.getRoot());
+    }
+
+    /**
+     * 如果需要在页面加载时做一些初始化操作，则覆写这个方法
+     */
+    protected void init(){
+        //...
     }
 
     /**
@@ -33,11 +41,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected abstract BaseViewModel configureViewModel();
 
-    /**
-     * 返回页面的presenter
-     * @return
-     */
-    protected abstract BasePresenter configurePresenter();
 
     /**
      * 绑定xml中指定的vm和presenter
@@ -51,5 +54,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
 
     protected abstract ViewDataBinding configureDataBinding();
+
 
 }

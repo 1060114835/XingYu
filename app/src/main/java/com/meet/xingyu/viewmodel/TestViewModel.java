@@ -20,12 +20,14 @@ public class TestViewModel extends AdapterViewModel {
     private static TestViewModel instance;
     private MutableLiveData<String> appName;
     private MutableLiveData<String> detail;
+    private MutableLiveData<String> title;
     private SingleTypeAdapter<MutableLiveData<TestBean>> singleTypeAdapter;
 
     private TestViewModel() {
         mList = new ArrayList<>();
         appName = new MutableLiveData<>();
         detail = new MutableLiveData<>();
+        title = new MutableLiveData<>();
     }
 
     @Override
@@ -33,6 +35,7 @@ public class TestViewModel extends AdapterViewModel {
         //网络请求数据
         appName.setValue("行遇");
         detail.setValue("练手项目");
+        title.setValue("测试页");
         for (int i = 0; i < 30; i++) {
             MutableLiveData<TestBean> mutableLiveData = new MutableLiveData<>();
             mutableLiveData.setValue(new TestBean(i + "", "用户" + i + "号"));
@@ -85,5 +88,13 @@ public class TestViewModel extends AdapterViewModel {
 
     public void setDetail(MutableLiveData<String> detail) {
         this.detail = detail;
+    }
+
+    public MutableLiveData<String> getTitle() {
+        return title;
+    }
+
+    public void setTitle(MutableLiveData<String> title) {
+        this.title = title;
     }
 }

@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <Button
+            android:id="@+id/bt_1"
             android:layout_marginHorizontal="50dp"
             android:text="点击事件"
             onClick="@{presenter}"

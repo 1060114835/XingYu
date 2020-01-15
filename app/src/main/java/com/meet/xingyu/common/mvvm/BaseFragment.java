@@ -22,7 +22,6 @@ public abstract class BaseFragment extends Fragment {
     private View dealDataBinding() {
         ViewDataBinding dataBinding = configureDataBinding();
         dataBinding.setLifecycleOwner(this);
-        configurePresenter().init();
         configureViewModel().loadData();
         bindingVariable();
         return dataBinding.getRoot();
@@ -34,5 +33,11 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void bindingVariable();
 
-    protected abstract BasePresenter configurePresenter();
+    /**
+     * 如果需要在页面加载时做一些初始化操作，则覆写这个方法
+     */
+    protected void init(){
+        //...
+    }
+
 }

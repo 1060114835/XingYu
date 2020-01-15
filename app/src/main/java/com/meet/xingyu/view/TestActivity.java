@@ -6,6 +6,8 @@ import com.meet.xingyu.common.mvvm.BaseActivity;
 import com.meet.xingyu.common.mvvm.BasePresenter;
 import com.meet.xingyu.common.mvvm.BaseViewModel;
 import com.meet.xingyu.databinding.ActivityTestBinding;
+import com.meet.xingyu.net.IResults;
+import com.meet.xingyu.net.NetUtil;
 import com.meet.xingyu.presenter.TestPresenter;
 import com.meet.xingyu.viewmodel.TestViewModel;
 

@@ -23,7 +23,7 @@ android {
     dataBinding {
         enabled = true
     }
-}
+}i
 
 dependencies {
     //卡片布局依赖

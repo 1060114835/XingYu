@@ -26,6 +26,9 @@ android {
 }
 
 dependencies {
+    //卡片布局依赖
+    implementation 'androidx.cardview:cardview:1.0.0'
+
     //网络层依赖
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'

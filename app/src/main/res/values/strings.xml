@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">行遇</string>
+    <string name="login_button">微信登录</string>
 </resources>

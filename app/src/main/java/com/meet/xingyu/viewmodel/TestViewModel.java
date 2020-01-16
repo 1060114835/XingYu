@@ -1,6 +1,7 @@
 package com.meet.xingyu.viewmodel;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestViewModel extends AdapterViewModel {
-    private List<MutableLiveData<TestBean>> mList;
     private static TestViewModel instance;
     private MutableLiveData<String> appName;
     private MutableLiveData<String> detail;
@@ -24,7 +24,6 @@ public class TestViewModel extends AdapterViewModel {
     private SingleTypeAdapter<MutableLiveData<TestBean>> singleTypeAdapter;
 
     private TestViewModel() {
-        mList = new ArrayList<>();
         appName = new MutableLiveData<>();
         detail = new MutableLiveData<>();
         title = new MutableLiveData<>();
@@ -32,17 +31,18 @@ public class TestViewModel extends AdapterViewModel {
 
     @Override
     public void loadData() {
+        List<MutableLiveData<TestBean>> list = new ArrayList<>();
         //网络请求数据
         appName.setValue("行遇");
         detail.setValue("练手项目");
         title.setValue("测试页");
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 20; i++) {
             MutableLiveData<TestBean> mutableLiveData = new MutableLiveData<>();
             mutableLiveData.setValue(new TestBean(i + "", "用户" + i + "号"));
-            mList.add(mutableLiveData);
+            list.add(mutableLiveData);
         }
         if (singleTypeAdapter != null) {
-            singleTypeAdapter.set(mList);
+            singleTypeAdapter.set(list);
         }
 
     }
@@ -63,7 +63,7 @@ public class TestViewModel extends AdapterViewModel {
         if (singleTypeAdapter == null) {
             singleTypeAdapter =  new SingleTypeAdapter<>(context,com.meet.xingyu.BR.data
                     , R.layout.item_test, com.meet.xingyu.BR.presenter);
-            singleTypeAdapter.set(mList);
+            loadData();
             singleTypeAdapter.setmListener(TestPresenter.getInstance());
         }
         return singleTypeAdapter;

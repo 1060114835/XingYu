@@ -80,7 +80,7 @@ LoginViewModel
 LoginPresenter
 ...
 ```
-
+- 时间驱动类型（点击事件）的网络请求，调用链 presneter -> viewmodel -> 网络请求 加载数据到liveData -> liveData值改变页面自动更新
 - 工具类统一以Util结尾
 - 全局常量统一写在在utils包下的Constants常量类中，并写好注释
 - 布局中引用的dp、sp还有颜色统一在values文件夹中定义。每次使用资源时先在values包内看看有没有其他人已经写好使用过的

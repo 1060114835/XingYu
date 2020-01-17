@@ -56,4 +56,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract ViewDataBinding configureDataBinding();
 
 
+    /**\
+     * 返得到页面你的binding
+     */
+    @SuppressWarnings("unchecked")
+    public<T extends ViewDataBinding> T getBinding() {
+        return (T)configureDataBinding();
+    }
+
 }

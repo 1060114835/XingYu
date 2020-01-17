@@ -1,6 +1,7 @@
 package com.meet.xingyu.model;
 
 public class TestBean {
+
     private String userId;
     private String userName;
 
@@ -26,6 +27,7 @@ public class TestBean {
     }
 
     @Override
+
     public String toString() {
         return "TestBean{" +
                 "userId='" + userId + '\'' +

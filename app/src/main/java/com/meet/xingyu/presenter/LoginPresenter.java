@@ -6,7 +6,8 @@ import android.view.View;
 
 import com.meet.xingyu.R;
 import com.meet.xingyu.common.mvvm.BasePresenter;
-import com.meet.xingyu.view.TestActivity;
+import com.meet.xingyu.databinding.ActivityMianBinding;
+import com.meet.xingyu.view.MainActivity;
 
 public class LoginPresenter extends BasePresenter {
 
@@ -16,10 +17,12 @@ public class LoginPresenter extends BasePresenter {
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.login_bt_1) {
-            Intent intent = new Intent(v.getContext(), TestActivity.class);
-            v.getContext().startActivity(intent);
-            ((Activity)v.getContext()).finish();
+        switch (v.getId()) {
+            case R.id.login_bt_1:
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                v.getContext().startActivity(intent);
+                ((Activity)v.getContext()).finish();
+                break;
         }
     }
 

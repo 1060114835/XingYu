@@ -22,9 +22,14 @@ public abstract class BaseFragment extends Fragment {
     private View dealDataBinding() {
         ViewDataBinding dataBinding = configureDataBinding();
         dataBinding.setLifecycleOwner(this);
-        configureViewModel().loadData();
         bindingVariable();
         return dataBinding.getRoot();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        configureViewModel().loadData();
     }
 
     protected abstract BaseViewModel configureViewModel();

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.meet.xingyu.viewmodel.MainViewModel" />
+        <variable
+            name="presenter"
+            type="com.meet.xingyu.presenter.MainPresenter" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/main_vp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <LinearLayout
+                android:id="@+id/main_ly_recommend"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                onClick="@{presenter}"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/main_iv_recommend"
+                    android:layout_marginBottom="2dp"
+                    android:src="@drawable/viewpager_icon_recommend_unpress"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:text="@string/recommend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/main_ly_post"
+                android:layout_weight="1"
+                onClick="@{presenter}"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/main_iv_post"
+                    android:layout_marginBottom="2dp"
+                    android:src="@drawable/viewpager_icon_post_unpress"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:text="@string/psot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/main_ly_route"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                onClick="@{presenter}"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/main_iv_route"
+                    android:src="@drawable/viewpager_icon_route_unpress"
+                    android:layout_width="30dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:text="@string/route"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/main_ly_self"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                onClick="@{presenter}"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/main_iv_self"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="2dp"
+                    android:src="@drawable/viewpager_icon_self_unpress" />
+
+                <TextView
+                    android:text="@string/self"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

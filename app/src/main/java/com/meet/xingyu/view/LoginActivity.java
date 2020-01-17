@@ -9,7 +9,7 @@ import com.meet.xingyu.presenter.LoginPresenter;
 import com.meet.xingyu.viewmodel.LoginViewModel;
 
 public class LoginActivity extends BaseActivity {
-    ActivityLoginBinding binding;
+    private ActivityLoginBinding binding;
     @Override
     protected BaseViewModel configureViewModel() {
         return LoginViewModel.getInstance();

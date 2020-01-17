@@ -5,6 +5,7 @@ package com.meet.xingyu.common.utils;
 import android.graphics.Color;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
@@ -16,6 +17,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.meet.xingyu.BR;
 import com.meet.xingyu.R;
 import com.meet.xingyu.common.mvvm.BasePresenter;
+import com.meet.xingyu.utils.UnitTranstormUtil;
 
 
 public class CustomActionBar {
@@ -47,12 +49,12 @@ public class CustomActionBar {
         binding.executePendingBindings();
 
         ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT,
-                ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = binding.getRoot();
-        TextView textM = mActionBarView.findViewById(R.id.title);
-        TextView textR = mActionBarView.findViewById(R.id.right_icon);
-        mActionBarView.setBackgroundColor(Color.parseColor(backgroundColor));
-        mActionBarView.setZ(0);
+                ViewGroup.LayoutParams.MATCH_PARENT, Gravity.CENTER);
+        View actionBarView = binding.getRoot();
+        TextView textM = actionBarView.findViewById(R.id.title);
+        TextView textR = actionBarView.findViewById(R.id.right_icon);
+        actionBarView.setBackgroundColor(Color.parseColor(backgroundColor));
+        actionBarView.setZ(0);
         textR.setText(rightText);
         if (rightImg != 0){
             textR.setBackgroundResource(rightImg);
@@ -61,11 +63,13 @@ public class CustomActionBar {
         textR.setTextColor(Color.parseColor(rightColor));
         ActionBar actionBar = activity.getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setCustomView(mActionBarView, lp);
+            actionBar.setCustomView(actionBarView, lp);
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
             actionBar.setDisplayShowCustomEnabled(true);
             actionBar.setDisplayShowHomeEnabled(false);
             actionBar.setDisplayShowTitleEnabled(false);
         }
     }
+
+
 }

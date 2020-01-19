@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdv_route_all_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#F5BB22">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="18dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_margin="18dp"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:id="@+id/tv_route_all_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="06月03日"
+                    android:textColor="#010101"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_route_all_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:textColor="#010101"
+                    android:text="08:30"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_toEndOf="@+id/tv_route_all_data"
+                    android:layout_marginStart="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_route_all_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="周一"
+                    android:textColor="#010101"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_toEndOf="@+id/tv_route_all_time"
+                    android:layout_marginStart="8dp" />
+
+                <ImageView
+                    android:id="@+id/img_route_all_delete"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/img_item_route_all_delete"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="8dp"/>
+
+                <View
+                    android:id="@+id/v_line1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_below="@+id/tv_route_all_data"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_start"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="起"
+                    android:textColor="#B9B9B9"
+                    android:layout_below="@+id/v_line1"
+                    android:gravity="fill_vertical"
+                    android:layout_marginStart="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_route_all_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="重庆邮电大学"
+                    android:textColor="#010101"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="fill_vertical"
+                    android:layout_toEndOf="@+id/tv_start"
+                    android:layout_marginStart="10dp"
+                    android:layout_below="@+id/v_line1"/>
+
+                <TextView
+                    android:id="@+id/tv_end"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="终"
+                    android:textColor="#B9B9B9"
+                    android:layout_below="@+id/tv_start"
+                    android:gravity="fill_vertical"
+                    android:layout_marginStart="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_route_all_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="南坪四公里"
+                    android:textStyle="bold"
+                    android:textColor="#010101"
+                    android:textSize="18sp"
+                    android:gravity="fill_vertical"
+                    android:layout_toEndOf="@+id/tv_end"
+                    android:layout_marginStart="10dp"
+                    android:layout_below="@+id/tv_start"/>
+
+                <TextView
+                    android:id="@+id/tv_captain"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="队长"
+                    android:textColor="#B9B9B9"
+                    android:layout_below="@+id/tv_end"
+                    android:gravity="fill_vertical"
+                    android:layout_marginStart="12dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_all_captain_sex"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:src="#ED2FFC"
+                    android:layout_toEndOf="@+id/tv_captain"
+                    android:layout_marginStart="10dp"
+                    android:layout_below="@+id/tv_end"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:id="@+id/tv_route_all_captain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="薛大宝儿"
+                    android:textColor="#484848"
+                    android:textSize="18sp"
+                    android:gravity="fill_vertical"
+                    android:layout_toEndOf="@+id/img_all_captain_sex"
+                    android:layout_marginStart="5dp"
+                    android:layout_below="@+id/tv_end"/>
+
+                <TextView
+                    android:id="@+id/tv_teammate"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="拼友"
+                    android:textColor="#B9B9B9"
+                    android:layout_below="@+id/tv_captain"
+                    android:gravity="fill_vertical"
+                    android:layout_marginStart="12dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_point_teammate_sex"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:src="#5D34F4"
+                    android:layout_toEndOf="@+id/tv_teammate"
+                    android:layout_marginStart="10dp"
+                    android:layout_below="@+id/tv_captain"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:id="@+id/tv_route_all_teammate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Jodie Chan"
+                    android:textColor="#484848"
+                    android:textSize="18sp"
+                    android:gravity="fill_vertical"
+                    android:layout_toEndOf="@+id/img_point_teammate_sex"
+                    android:layout_marginStart="5dp"
+                    android:layout_below="@+id/tv_captain"/>
+
+                <View
+                    android:id="@+id/v_line2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE"
+                    android:layout_below="@+id/tv_teammate"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_ended"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="行程完结"
+                    android:textColor="#343434"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_below="@+id/v_line2"
+                    android:layout_marginStart="40dp" />
+
+                <View
+                    android:id="@+id/v_line3"
+                    android:layout_width="1dp"
+                    android:layout_height="13dp"
+                    android:background="#969696"
+                    android:layout_below="@+id/v_line2"
+                    android:layout_toEndOf="@+id/tv_ended"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_route_all_communicate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="立即交流"
+                    android:textColor="#343434"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/v_line2"
+                    android:layout_toEndOf="@+id/v_line3"
+                    android:layout_marginStart="48dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

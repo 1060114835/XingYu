@@ -14,11 +14,6 @@ import io.reactivex.disposables.Disposable;
 public abstract class Observer<T> implements io.reactivex.Observer<T> {
 
     @Override
-    public void onSubscribe(Disposable d) {
-
-    }
-
-    @Override
     public void onNext(T value) {
         //可做其他处理
 

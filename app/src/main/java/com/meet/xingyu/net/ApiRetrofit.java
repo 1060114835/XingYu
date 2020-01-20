@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * @author Richard
  * @time 2020/1/16
- * @describe 构建 Retrofit 实例
+ * @describe 封装构建 Retrofit 实例
  *
  * 网络请求使用示例：
  *
@@ -18,21 +18,31 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * http://fanyi.youdao.com/translate?doctype=json&jsonversion=&type=&keyfrom=&model=&mid
  *      =&imei=&vendor=&screen=&ssid=&network=&abtest=
  *
- *      ApiRetrofit.create("https://fanyi.youdao.com/", IYouDao.class)
- *                 .getObservable("translate?doctype=json&jsonversion=&type" +
- *                         "=&keyfrom=&model=&mid=&imei=&vendor=&screen=&ssid=&network=&abtest=",
- *                         "i am richard")
- *                 .subscribeOn(Schedulers.newThread())
- *                 .observeOn(AndroidSchedulers.mainThread())
- *                 .subscribe(new Observer<YouDao>() {
- *                     @Override
- *                     public void onSuccess(YouDao youDao) {
- *                         Log.d("MainActivity", "开始打印数据");
- *                         String s = youDao.getTranslateResult().get(0).get(0).getTgt();
- *                         Log.d("MainActivity", s);
- *                     }
- *                 });
+ *       ApiRetrofit.create("https://fanyi.youdao.com/", IYouDao.class)
+ *            .getObservable("translate?doctype=json&jsonversion=&type=&keyfrom=&model"
+ *                  + "=&mid=&imei=&vendor=&screen=&ssid=&network=&abtest=",
+ *                      "i am richard")
+ *            .subscribeOn(Schedulers.newThread())
+ *            .observeOn(AndroidSchedulers.mainThread())
+ *            .subscribe(new Observer<YouDao>() {
+ *                @Override
+ *                public void onSuccess(YouDao youDao) {
+ *                    Log.d("TestActivity", "开始打印数据");
+ *                    String s = youDao.getTranslateResult().get(0).get(0).getTgt();
+ *                    Log.d("TestActivity", s);
+ *                }
  *
+ *                @Override
+ *                public void onSubscribe(Disposable d) {
+ *                    SubscriptionManager.getInstance().add(d);
+ *                }
+ *            });
+ *
+ *  订阅应该在 View 销毁的时候（或者不使用网络请求的时候）取消
+ *          SubscriptionManager.getInstance().cancel(d);
+ *      或者取消全部
+ *          SubscriptionManager.getInstance().clear;
+ *     上面两行代码也可作为取消网络请求来使用
  */
 public class ApiRetrofit {
 

@@ -11,10 +11,19 @@ import com.meet.xingyu.common.adapter.BaseAdapter;
 import com.meet.xingyu.common.adapter.SingleTypeAdapter;
 import com.meet.xingyu.common.mvvm.AdapterViewModel;
 import com.meet.xingyu.model.TestBean;
+import com.meet.xingyu.net.ApiRetrofit;
+import com.meet.xingyu.net.Observer;
+import com.meet.xingyu.net.SubscriptionManager;
+import com.meet.xingyu.net.bean.YouDao;
+import com.meet.xingyu.net.idescrbe.IYouDao;
 import com.meet.xingyu.presenter.TestPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class TestViewModel extends AdapterViewModel {
     private static TestViewModel instance;
@@ -96,5 +105,33 @@ public class TestViewModel extends AdapterViewModel {
 
     public void setTitle(MutableLiveData<String> title) {
         this.title = title;
+    }
+
+    /**
+     * 测试网络请求方法，模板未完善，勿删
+     */
+    public void test() {
+        //测试网络请求
+        //注意在重写的 onSubscribe() 方法中添加订阅
+        //提醒不使用的时候应该进行取消
+        ApiRetrofit.create("https://fanyi.youdao.com/", IYouDao.class)
+                .getObservable("translate?doctype=json&jsonversion=&type" +
+                                         "=&keyfrom=&model=&mid=&imei=&vendor=&screen=&ssid=&network=&abtest=",
+                          "i am richard")
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<YouDao>() {
+                    @Override
+                    public void onSuccess(YouDao youDao) {
+                        Log.d("TestActivity", "开始打印数据");
+                        String s = youDao.getTranslateResult().get(0).get(0).getTgt();
+                        Log.d("TestActivity", s);
+                    }
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        SubscriptionManager.getInstance().add(d);
+                    }
+                });
     }
 }

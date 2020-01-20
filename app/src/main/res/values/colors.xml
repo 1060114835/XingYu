@@ -7,4 +7,6 @@
     <color name="mainColor">#FAB61E</color>
     <color name="black">#333333</color>
     <color name="gray">#808080</color>
+    <color name="graywhite">#e2e2e2</color>
+    <color name="red">#FF0000</color>
 </resources>

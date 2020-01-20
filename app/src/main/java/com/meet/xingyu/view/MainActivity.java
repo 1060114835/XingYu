@@ -14,6 +14,7 @@ import com.meet.xingyu.common.mvvm.BaseViewModel;
 import com.meet.xingyu.common.utils.CustomActionBar;
 import com.meet.xingyu.databinding.ActivityMianBinding;
 import com.meet.xingyu.presenter.MainPresenter;
+import com.meet.xingyu.view.my.MyFragment;
 import com.meet.xingyu.viewmodel.FragmentTestViewModel;
 import com.meet.xingyu.viewmodel.MainViewModel;
 
@@ -42,7 +43,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void init() {
         String[] titles = {"推荐","发布","行程","我的"};
-        Fragment[] fragments = {new TestFragment(),new TestFragment(),new TestFragment(),new TestFragment()};
+        Fragment[] fragments = {new TestFragment(),new TestFragment(),new TestFragment(),new MyFragment()};
         int[] src = {R.drawable.viewpager_icon_recommend_press,
                 R.drawable.viewpager_icon_post_press,
                 R.drawable.viewpager_icon_route_press,

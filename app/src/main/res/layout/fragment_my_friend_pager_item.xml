@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="myBean"
+            type="androidx.lifecycle.MutableLiveData&lt;com.meet.xingyu.model.my.MyBean&gt;" />
+
+        <variable
+            name="myFriendPresenter"
+            type="com.meet.xingyu.presenter.my.MyFriendPresenter" />
+
+        <variable
+            name="myFriendVM"
+            type="com.meet.xingyu.viewmodel.my.FragmentMyFriendViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/graywhite"/>
+
+        <RelativeLayout
+            android:id="@+id/friend_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            clickItemBean="@{myBean}"
+            clickItemPresenter="@{myFriendPresenter}">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/friend_circle_image"
+                android:layout_width="25pt"
+                android:layout_height="25pt"
+                android:src="@{myBean.headImg}"
+                android:layout_centerVertical="true"
+                android:layout_margin="5pt"/>
+
+            <TextView
+                android:id="@+id/friend_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/friend_circle_image"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:text="@{myBean.nickName}"/>
+
+                <Button
+                    android:id="@+id/button_talk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24pt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10pt"
+                    android:text="交流"
+                    android:textSize="24dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/my_talk_bt_shape"
+                    clickItemBean="@{myBean}"
+                    clickItemPresenter="@{myFriendPresenter}"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/graywhite"
+            android:layout_marginLeft="32pt"/>
+
+        <RelativeLayout
+            android:id="@+id/friend_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32pt"
+            android:layout_marginVertical="5pt"
+            android:visibility="visible"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/dingwei_friend"
+                android:layout_width="12pt"
+                android:layout_height="12pt"
+                android:src="@drawable/my_launcher"/>
+
+            <TextView
+                android:id="@+id/start_point_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/dingwei_friend"
+                android:layout_marginHorizontal="5pt"
+                android:textSize="8pt"
+                android:textColor="@color/black"
+                android:text="@{myBean.startStation}"/>
+
+            <TextView
+                android:id="@+id/release_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/start_point_friend"
+                android:layout_toRightOf="@+id/dingwei_friend"
+                android:layout_marginLeft="5pt"
+                android:text="@{myBean.publishTime}"
+                android:textColor="@color/gray"/>
+
+            <ImageView
+                android:id="@+id/jiantou_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5pt"
+                android:src="@drawable/my_jiantou_apply2"
+                android:layout_toRightOf="@+id/start_point_friend"/>
+
+            <TextView
+                android:id="@+id/end_point_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/jiantou_friend"
+                android:layout_marginHorizontal="5pt"
+                android:textSize="8pt"
+                android:textColor="@color/black"
+                android:text="@{myBean.endStation}"/>
+
+            <TextView
+                android:id="@+id/release_time_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5pt"
+                android:layout_toRightOf="@id/jiantou_friend"
+                android:layout_below="@+id/end_point_friend"
+                android:text="@{myBean.longTime}"
+                android:textColor="@color/gray"/>
+
+
+            <ImageView
+                android:id="@+id/fold_jiantou"
+                android:layout_width="25pt"
+                android:layout_height="10pt"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10pt"
+                android:src="@drawable/my_item_down"
+                onClick="@{myFriendPresenter}"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/graywhite"/>
+    </LinearLayout>
+
+</layout>

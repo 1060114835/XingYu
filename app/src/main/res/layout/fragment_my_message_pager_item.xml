@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="myBean"
+            type="androidx.lifecycle.MutableLiveData&lt;com.meet.xingyu.model.my.MyBean&gt;" />
+
+        <variable
+            name="myMessagePresenter"
+            type="com.meet.xingyu.presenter.my.MyMessagePresenter" />
+
+        <variable
+            name="myMessageViewModel"
+            type="com.meet.xingyu.viewmodel.my.FragmentMyMessageViewModel" />
+    </data>
+
+    <com.daimajia.swipe.SwipeLayout
+        android:id="@+id/swipe_layput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:clickToClose="true"
+        app:show_mode="pull_out">
+
+        <Button
+            android:id="@+id/delete_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:text="删除"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            clickItemBean="@{myBean}"
+            clickItemPresenter="@{myMessagePresenter}"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/graywhite"/>
+
+            <RelativeLayout
+                android:id="@+id/message_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/message_circle_image"
+                    android:layout_width="25pt"
+                    android:layout_height="25pt"
+                    android:src="@{myBean.headImg}"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5pt"/>
+
+                <TextView
+                    android:id="@+id/message_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/message_circle_image"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    android:text="@{myBean.nickName}"/>
+
+                <RelativeLayout
+                    android:id="@+id/message_remind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10pt"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/my_message_remind_yellow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@{myBean.yellowRemind}"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/white"
+                        android:text="@{myBean.messageCount}"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="32pt"
+                android:background="@color/graywhite"/>
+
+            <RelativeLayout
+                android:id="@+id/message_stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32pt"
+                android:layout_marginVertical="5pt"
+                android:visibility="visible"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/dingwei_message"
+                    android:layout_width="12pt"
+                    android:layout_height="12pt"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/my_launcher"/>
+
+                <TextView
+                    android:id="@+id/start_point_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/dingwei_message"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="5pt"
+                    android:textSize="10pt"
+                    android:textColor="@color/black"
+                    android:text="@{myBean.startStation}"/>
+
+                <ImageView
+                    android:id="@+id/jiantou_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/my_jiantou_apply2"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="5pt"
+                    android:layout_toRightOf="@+id/start_point_message"/>
+
+                <TextView
+                    android:id="@+id/end_point_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/jiantou_message"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5pt"
+                    android:textSize="10pt"
+                    android:textColor="@color/black"
+                    android:text="@{myBean.endStation}"/>
+
+
+                <RelativeLayout
+                    android:id="@+id/message_remind_gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10pt"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/my_message_remind_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@{myBean.grayRemind}"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/white"
+                        android:text="@{myBean.locationCount}"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/graywhite"/>
+        </LinearLayout>
+
+    </com.daimajia.swipe.SwipeLayout>
+
+</layout>

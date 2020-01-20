@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="fragmentMy"
+            type="com.meet.xingyu.view.my.MyFragment" />
+
+        <variable
+            name="fragmentMyVM"
+            type="com.meet.xingyu.viewmodel.my.FragmentMyViewModel" />
+    </data>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10pt">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0pt"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15pt">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/my_touxiang"
+                    android:layout_width="40pt"
+                    android:layout_height="40pt"
+                    android:src="@{fragmentMyVM.urlMyIcon}"
+                    android:layout_gravity="center_vertical"/>
+
+                <ImageView
+                    android:id="@+id/my_xingbie"
+                    android:layout_width="15pt"
+                    android:layout_height="15pt"
+                    android:layout_marginHorizontal="10pt"
+                    android:layout_gravity="center_vertical"
+                    android:src="@{fragmentMyVM.sexUrl}" />
+
+                <TextView
+                    android:id="@+id/my_nicheng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@{fragmentMyVM.myId}"
+                    android:textColor="@color/black"
+                    android:textSize="15pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0pt"
+                android:layout_weight="5"
+                android:orientation="vertical">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/my_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabTextAppearance="@style/MyTabLayoutText"
+                    app:tabSelectedTextColor="@color/mainColor"
+                    app:tabTextColor="@color/black"
+                    app:tabIndicatorColor="@color/mainColor"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/graywhite"/>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/my_view_pagers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+</layout>

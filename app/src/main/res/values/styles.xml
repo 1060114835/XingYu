@@ -18,4 +18,9 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
     </style>
 
+    <!-- tablayout 标题字体style-->
+    <style name="MyTabLayoutText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">15pt</item>
+    </style>
+
 </resources>

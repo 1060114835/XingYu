@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="colorApply"
+            type="int" />
+        <variable
+            name="colorMy"
+            type="int" />
+        <variable
+            name="colorAll"
+            type="int" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="650dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_route"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_route_color_apply"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@{colorApply}"
+                android:layout_marginStart="140dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_route_color_my"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@{colorMy}"
+                android:layout_toEndOf="@+id/civ_route_color_apply"
+                android:layout_marginStart="30dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_route_color_all"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@{colorAll}"
+                android:layout_toEndOf="@+id/civ_route_color_my"
+                android:layout_marginStart="30dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

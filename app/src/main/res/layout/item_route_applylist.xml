@@ -4,9 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="10dp"
+        android:layout_margin="5dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -17,6 +18,8 @@
                 android:layout_height="45dp"
                 android:text="重庆邮电大学"
                 android:textColor="#161616"
+                android:textSize="19sp"
+                android:textStyle="bold"
                 android:gravity="center"
                 android:paddingEnd="10dp"
                 android:layout_alignParentStart="true"
@@ -37,6 +40,8 @@
                 android:text="较场口"
                 android:textColor="#161616"
                 android:gravity="center"
+                android:textSize="19sp"
+                android:textStyle="bold"
                 android:paddingStart="10dp"
                 android:layout_toEndOf="@+id/img_jiantou"
                 tools:ignore="RtlSymmetry" />
@@ -63,6 +68,7 @@
                 android:layout_height="40dp"
                 android:text="2019/06/03"
                 android:textColor="#101010"
+                android:textSize="17sp"
                 android:gravity="center"
                 android:paddingStart="10dp"
                 android:layout_below="@id/v_line1"
@@ -74,13 +80,14 @@
                 android:layout_height="40dp"
                 android:text="07:30"
                 android:textColor="#101010"
+                android:textSize="17sp"
                 android:gravity="center"
                 android:layout_toEndOf="@id/tv_route_apply_data"
                 android:layout_below="@id/tv_route_apply_start"
                 android:layout_marginStart="15dp" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/img_route_apply_head"
+                android:id="@+id/civ_route_apply_head"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:paddingStart="10dp"
@@ -94,6 +101,7 @@
                 android:layout_height="30dp"
                 android:text="Jodie Chan"
                 android:textColor="#969696"
+                android:textSize="15sp"
                 android:gravity="center"
                 android:layout_below="@+id/tv_route_apply_data"
                 android:layout_marginStart="40dp"/>
@@ -105,6 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:text="已同意"
+                android:textColor="#2E2E2E"
                 android:gravity="center"
                 android:layout_below="@+id/tv_route_apply_data"
                 android:layout_alignParentEnd="true"

@@ -14,7 +14,7 @@
             android:padding="25dp">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cdv_route_all_item"
+                android:id="@+id/cdv_route_my_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="10dp"
@@ -27,7 +27,7 @@
                     android:padding="18dp">
 
                     <TextView
-                        android:id="@+id/tv_route_all_data"
+                        android:id="@+id/tv_route_my_data"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="06月03日"
@@ -38,7 +38,7 @@
                         android:layout_marginStart="10dp" />
 
                     <TextView
-                        android:id="@+id/tv_route_all_time"
+                        android:id="@+id/tv_route_my_time"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:textColor="#010101"
@@ -46,11 +46,11 @@
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:layout_toEndOf="@+id/tv_route_all_data"
+                        android:layout_toEndOf="@+id/tv_route_my_data"
                         android:layout_marginStart="8dp" />
 
                     <TextView
-                        android:id="@+id/tv_route_all_week"
+                        android:id="@+id/tv_route_my_week"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="周一"
@@ -58,14 +58,14 @@
                         android:textSize="19sp"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:layout_toEndOf="@+id/tv_route_all_time"
+                        android:layout_toEndOf="@+id/tv_route_my_time"
                         android:layout_marginStart="8dp" />
 
                     <ImageView
-                        android:id="@+id/img_route_all_delete"
+                        android:id="@+id/img_route_my_delete"
                         android:layout_width="18dp"
                         android:layout_height="18dp"
-                        android:src="@drawable/img_item_route_all_delete"
+                        android:src="@drawable/img_item_route_delete"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="10dp"
                         android:layout_marginTop="8dp"/>
@@ -75,7 +75,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="1dp"
                         android:background="#EEEEEE"
-                        android:layout_below="@+id/tv_route_all_data"
+                        android:layout_below="@+id/tv_route_my_data"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"/>
 
@@ -90,7 +90,7 @@
                         android:layout_marginStart="12dp" />
 
                     <TextView
-                        android:id="@+id/tv_route_all_start"
+                        android:id="@+id/tv_route_my_start"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="重庆邮电大学"
@@ -113,7 +113,7 @@
                         android:layout_marginStart="12dp" />
 
                     <TextView
-                        android:id="@+id/tv_route_all_end"
+                        android:id="@+id/tv_route_my_end"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="南坪四公里"
@@ -136,7 +136,7 @@
                         android:layout_marginStart="12dp" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/img_my_captain_sex"
+                        android:id="@+id/civ_my_captain_sex"
                         android:layout_width="5dp"
                         android:layout_height="5dp"
                         android:src="#ED2FFC"
@@ -146,14 +146,14 @@
                         android:layout_marginTop="12dp"/>
 
                     <TextView
-                        android:id="@+id/tv_route_all_captain"
+                        android:id="@+id/tv_route_my_captain"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="薛大宝儿"
                         android:textColor="#484848"
                         android:textSize="18sp"
                         android:gravity="fill_vertical"
-                        android:layout_toEndOf="@+id/img_my_captain_sex"
+                        android:layout_toEndOf="@+id/civ_my_captain_sex"
                         android:layout_marginStart="5dp"
                         android:layout_below="@+id/tv_end"/>
 
@@ -168,7 +168,7 @@
                         android:layout_marginStart="12dp" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/img_my_teammate_sex"
+                        android:id="@+id/civ_my_teammate_sex"
                         android:layout_width="5dp"
                         android:layout_height="5dp"
                         android:src="#5D34F4"
@@ -178,14 +178,14 @@
                         android:layout_marginTop="12dp"/>
 
                     <TextView
-                        android:id="@+id/tv_route_all_teammate"
+                        android:id="@+id/tv_route_my_teammate"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="Jodie Chan"
                         android:textColor="#484848"
                         android:textSize="18sp"
                         android:gravity="fill_vertical"
-                        android:layout_toEndOf="@+id/img_my_teammate_sex"
+                        android:layout_toEndOf="@+id/civ_my_teammate_sex"
                         android:layout_marginStart="5dp"
                         android:layout_below="@+id/tv_captain"/>
 
@@ -199,7 +199,7 @@
                         android:layout_marginBottom="10dp"/>
 
                     <TextView
-                        android:id="@+id/tv_ended"
+                        android:id="@+id/tv_route_my_ended"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="行程完结"
@@ -215,12 +215,12 @@
                         android:layout_height="13dp"
                         android:background="#969696"
                         android:layout_below="@+id/v_line2"
-                        android:layout_toEndOf="@+id/tv_ended"
+                        android:layout_toEndOf="@+id/tv_route_my_ended"
                         android:layout_marginStart="48dp"
                         android:layout_marginTop="10dp"/>
 
                     <TextView
-                        android:id="@+id/tv_route_all_communicate"
+                        android:id="@+id/tv_route_my_communicate"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="立即交流"
@@ -241,7 +241,7 @@
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="10dp"
                 app:cardBackgroundColor="#F5BB22"
-                android:layout_below="@+id/cdv_route_all_item"
+                android:layout_below="@+id/cdv_route_my_item"
                 android:layout_marginTop="20dp">
 
                 <RelativeLayout

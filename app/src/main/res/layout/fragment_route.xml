@@ -1,66 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:adapter="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
-            name="colorApply"
-            type="int" />
-        <variable
-            name="colorMy"
-            type="int" />
-        <variable
-            name="colorAll"
-            type="int" />
-
+            name="routeVM"
+            type="com.meet.xingyu.viewmodel.route.RouteViewModel" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#F2F2F2">
 
-        <LinearLayout
-            android:id="@+id/ll_recycler"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_route"
             android:layout_width="match_parent"
-            android:layout_height="650dp">
+            android:layout_height="620dp"
+            adapter="@{routeVM}">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcv_route"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </androidx.recyclerview.widget.RecyclerView>
-
-        </LinearLayout>
+        </androidx.recyclerview.widget.RecyclerView>
 
         <RelativeLayout
             android:id="@+id/rl_indicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="30dp">
+            android:layout_marginTop="640dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/civ_route_color_apply"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:background="@{colorApply}"
-                android:layout_marginStart="140dp"/>
+            <ImageView
+                android:id="@+id/img_route_color_apply"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="150dp"
+                android:background="@drawable/img_route_bg_indicator" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/civ_route_color_my"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:background="@{colorMy}"
-                android:layout_toEndOf="@+id/civ_route_color_apply"
-                android:layout_marginStart="30dp"/>
+            <ImageView
+                android:id="@+id/img_route_color_my"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/img_route_color_apply"
+                android:background="@drawable/img_route_bg_indicator" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/civ_route_color_all"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:background="@{colorAll}"
-                android:layout_toEndOf="@+id/civ_route_color_my"
-                android:layout_marginStart="30dp"/>
+            <ImageView
+                android:id="@+id/img_route_color_all"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/img_route_color_my"
+                android:background="@drawable/img_route_bg_indicator" />
 
         </RelativeLayout>
 

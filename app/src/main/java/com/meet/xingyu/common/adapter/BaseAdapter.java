@@ -22,8 +22,10 @@ public abstract class BaseAdapter<T extends MutableLiveData> extends RecyclerVie
     protected BasePresenter.OnItemClickListener<T> mListener;
     protected int mBRPresenter;
 
+    public BaseAdapter() {
+    }
 
-    BaseAdapter(Context context, int iBRData, int iBRPresenter) {
+    public BaseAdapter(Context context, int iBRData, int iBRPresenter) {
         super();
         mContext = context;
         mBRData = iBRData;

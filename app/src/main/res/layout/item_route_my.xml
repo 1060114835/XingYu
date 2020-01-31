@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F2F2F2">
+
+    <data>
+        <variable
+            name="routeMyPresenter"
+            type="com.meet.xingyu.presenter.route.RouteMyPresenter" />
+        <variable
+            name="routeMyBean"
+            type="androidx.lifecycle.MutableLiveData&lt;com.meet.xingyu.model.route.MyAndApplyBean&gt;" />
+    </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -68,7 +78,9 @@
                         android:src="@drawable/img_item_route_delete"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="10dp"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="8dp"
+                        clickItemBean="@{routeMyBean}"
+                        clickItemPresenter="@{routeMyPresenter}"/>
 
                     <View
                         android:id="@+id/v_line1"
@@ -207,7 +219,9 @@
                         android:textSize="18sp"
                         android:gravity="center"
                         android:layout_below="@+id/v_line2"
-                        android:layout_marginStart="40dp" />
+                        android:layout_marginStart="40dp"
+                        clickItemBean="@{routeMyBean}"
+                        clickItemPresenter="@{routeMyPresenter}"/>
 
                     <View
                         android:id="@+id/v_line3"
@@ -229,7 +243,9 @@
                         android:textSize="18sp"
                         android:layout_below="@+id/v_line2"
                         android:layout_toEndOf="@+id/v_line3"
-                        android:layout_marginStart="48dp"/>
+                        android:layout_marginStart="48dp"
+                        clickItemBean="@{routeMyBean}"
+                        clickItemPresenter="@{routeMyPresenter}"/>
 
                 </RelativeLayout>
 

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F2F2F2">
+
+    <data>
+        <variable
+            name="routeAllPresenter"
+            type="com.meet.xingyu.presenter.route.RouteAllPresenter" />
+        <variable
+            name="routeAllBean"
+            type="androidx.lifecycle.MutableLiveData&lt;com.meet.xingyu.model.route.AllBean&gt;" />
+    </data>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cdv_route_all_item"
@@ -63,7 +73,9 @@
                     android:src="@drawable/img_item_route_delete"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp"
+                    clickItemBean="@{routeAllBean}"
+                    clickItemPresenter="@{routeAllPresenter}"/>
 
                 <View
                     android:id="@+id/v_line1"
@@ -202,7 +214,9 @@
                     android:textSize="18sp"
                     android:gravity="center"
                     android:layout_below="@+id/v_line2"
-                    android:layout_marginStart="40dp" />
+                    android:layout_marginStart="40dp"
+                    clickItemBean="@{routeAllBean}"
+                    clickItemPresenter="@{routeAllPresenter}"/>
 
                 <View
                     android:id="@+id/v_line3"
@@ -224,7 +238,9 @@
                     android:textSize="18sp"
                     android:layout_below="@+id/v_line2"
                     android:layout_toEndOf="@+id/v_line3"
-                    android:layout_marginStart="48dp"/>
+                    android:layout_marginStart="48dp"
+                    clickItemBean="@{routeAllBean}"
+                    clickItemPresenter="@{routeAllPresenter}"/>
 
             </RelativeLayout>
 

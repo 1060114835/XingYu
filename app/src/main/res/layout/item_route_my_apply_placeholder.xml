@@ -10,6 +10,6 @@
         android:gravity="center"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="80dp"
-        android:layout_marginStart="130dp"/>
+        android:layout_marginLeft="130dp" />
 
 </RelativeLayout>
